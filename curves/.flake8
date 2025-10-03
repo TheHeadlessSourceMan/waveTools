@@ -1,5 +1,5 @@
 [flake8]
-ignore =
+ignore=
     E231
     E128
     E225
@@ -17,7 +17,8 @@ ignore =
     E305
     E262
     E306
+    E502
 
-per-file-ignores =
+per-file-ignores=
     __init__.py:F401,F403
     */__init__.py:F401,F403
