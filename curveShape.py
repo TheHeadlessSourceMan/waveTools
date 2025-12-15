@@ -41,10 +41,18 @@ class CurveShape(typing.Generic[CurveValueT]):
     def __iter__(self)->typing.Generator[CurveValueT,None,None]:
         return self.range()
 
-    def range(self,start:float=0.0,step:float=1.0,stop:float=0.0)->typing.Generator[CurveValueT,None,None]:
+    def range(self,start:float=0.0,step:float=1.0,stop:float=0.0
+        )->typing.Generator[CurveValueT,None,None]:
+        """
+        Iterate over a series of x points and return their corresponding y points
+        """
         return self.iterate(range(start,step,stop))
 
-    def iterate(self,itr:typing.Iterable)->typing.Generator[CurveValueT,None,None]:
+    def iterate(self,itr:typing.Iterable[float]
+        )->typing.Generator[CurveValueT,None,None]:
+        """
+        Iterate over a series of x points and return their corresponding y points
+        """
         for idx in itr:
             yield self[idx]
 
