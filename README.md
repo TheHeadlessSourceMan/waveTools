@@ -3,3 +3,7 @@ Experimental library for managing wave and curve shapes, such as sinewaves, samp
 
 TODO: how does this get along with numpy for doing math and stuff?
 Also, I'm not re-inventing the wheel am I?
+
+For instance, these seem similar (and quite useful!):
+ - https://signalflow.dev/
+ - https://pythonhosted.org/audiolazy/index.html
