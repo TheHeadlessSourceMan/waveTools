@@ -1,11 +1,13 @@
 """
 A curve represented by spline points
 """
+import typing
 hasPyTorch=False
 hasCuPy=False
 try:
     # try gpu-accelerated alternatives
     import cupy as np # type: ignore
+    torch:typing.Any={}
     hasCuPy=True
 except ImportError:
     import numpy as np

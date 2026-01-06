@@ -46,7 +46,7 @@ class CurveShape(typing.Generic[CurveValueT]):
         """
         Iterate over a series of x points and return their corresponding y points
         """
-        return self.iterate(range(start,step,stop))
+        return self.iterate(range(start,step,stop)) # type: ignore
 
     def iterate(self,itr:typing.Iterable[float]
         )->typing.Generator[CurveValueT,None,None]:
@@ -60,6 +60,7 @@ class CurveShape(typing.Generic[CurveValueT]):
         """
         Get a single value
         """
+        _=idx
         if self.atEnd==END_TREATMENT.NONE:
             return None # type: ignore
         if self.atEnd==END_TREATMENT.INDEX_ERROR:
@@ -83,7 +84,7 @@ class CurveShape(typing.Generic[CurveValueT]):
         return float('inf')
 
     @property
-    def timedelta(self)->float:
+    def timedelta(self)->datetime.timedelta:
         """
         How long does the curve last, as a timedelta
 
@@ -116,3 +117,4 @@ class CurveShape(typing.Generic[CurveValueT]):
         """
         from curveInstance import CurveInstance
         return CurveInstance[CurveValueT](self,startTime)
+    startInstance=startCurveInstance

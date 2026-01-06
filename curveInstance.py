@@ -35,7 +35,7 @@ class CurveInstance(typing.Generic[CurveValueT]):
         return self.curveShape.duration
 
     @property
-    def timedelta(self)->float:
+    def timedelta(self)->datetime.timedelta:
         """
         How long does the curve last, as a timedelta
 
